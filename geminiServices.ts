@@ -30,7 +30,7 @@ export const optimizeContent = async (text: string, tone: EditorialTone): Promis
   const payload = {
     text,
     tone,
-    model: "gemini-3-flash-preview",
+    model: "gemini-2.0-flash",
     systemInstruction: getSystemInstruction(tone),
     responseSchema: {
       type: "OBJECT",
