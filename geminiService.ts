@@ -1,5 +1,4 @@
-
-import { GoogleGenAI, Type } from "@google/genai";
+import { Type } from "@google/genai";
 import { OptimizationResult, EditorialTone } from "./types";
 
 const getSystemInstruction = (tone: EditorialTone) => {
@@ -27,54 +26,60 @@ Para cada campo (Título, Linha Fina, Primeiro Parágrafo), gere um 'insight' (u
 };
 
 export const optimizeContent = async (text: string, tone: EditorialTone): Promise<OptimizationResult> => {
-  // A chave é injetada automaticamente pelo ambiente
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-  
-  const response = await ai.models.generateContent({
-    model: 'gemini-3-flash-preview',
-    contents: text,
-    config: {
-      systemInstruction: getSystemInstruction(tone),
-      responseMimeType: "application/json",
-      responseSchema: {
-        type: Type.OBJECT,
-        properties: {
-          titulo: { type: Type.STRING },
-          tituloInsight: {
-            type: Type.OBJECT,
-            properties: {
-              text: { type: Type.STRING },
-              category: { type: Type.STRING, enum: ['SEO', 'ALGORITHM', 'PSYCHOLOGY', 'STRUCTURE'] }
-            },
-            required: ["text", "category"]
+  // roda via Vercel function (/api/gemini) — mantém seu prompt e schema intactos
+  const payload = {
+    text,
+    tone,
+    model: "gemini-3-flash-preview",
+    systemInstruction: getSystemInstruction(tone),
+    responseSchema: {
+      type: "OBJECT",
+      properties: {
+        titulo: { type: "STRING" },
+        tituloInsight: {
+          type: "OBJECT",
+          properties: {
+            text: { type: "STRING" },
+            category: { type: "STRING", enum: ["SEO", "ALGORITHM", "PSYCHOLOGY", "STRUCTURE"] },
           },
-          linhaFina: { type: Type.STRING },
-          linhaFinaInsight: {
-            type: Type.OBJECT,
-            properties: {
-              text: { type: Type.STRING },
-              category: { type: Type.STRING }
-            },
-            required: ["text", "category"]
-          },
-          primeiroParagrafo: { type: Type.STRING },
-          primeiroParagrafoInsight: {
-            type: Type.OBJECT,
-            properties: {
-              text: { type: Type.STRING },
-              category: { type: Type.STRING }
-            },
-            required: ["text", "category"]
-          },
+          required: ["text", "category"],
         },
-        required: ["titulo", "tituloInsight", "linhaFina", "linhaFinaInsight", "primeiroParagrafo", "primeiroParagrafoInsight"],
+        linhaFina: { type: "STRING" },
+        linhaFinaInsight: {
+          type: "OBJECT",
+          properties: {
+            text: { type: "STRING" },
+            category: { type: "STRING" },
+          },
+          required: ["text", "category"],
+        },
+        primeiroParagrafo: { type: "STRING" },
+        primeiroParagrafoInsight: {
+          type: "OBJECT",
+          properties: {
+            text: { type: "STRING" },
+            category: { type: "STRING" },
+          },
+          required: ["text", "category"],
+        },
       },
+      required: ["titulo", "tituloInsight", "linhaFina", "linhaFinaInsight", "primeiroParagrafo", "primeiroParagrafoInsight"],
     },
+  };
+
+  const r = await fetch("/api/gemini", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
   });
 
-  const resultStr = response.text || '{}';
-  return JSON.parse(resultStr);
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(data?.error || "Gemini failed");
+
+  return data as OptimizationResult;
 };
+
+// deixa aqui se você ainda usa em algum lugar
 export async function runGeminiViaApi(prompt: string) {
   const r = await fetch("/api/gemini", {
     method: "POST",
@@ -87,4 +92,5 @@ export async function runGeminiViaApi(prompt: string) {
 
   return data.text as string;
 }
+
 
