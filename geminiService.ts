@@ -75,3 +75,16 @@ export const optimizeContent = async (text: string, tone: EditorialTone): Promis
   const resultStr = response.text || '{}';
   return JSON.parse(resultStr);
 };
+export async function runGeminiViaApi(prompt: string) {
+  const r = await fetch("/api/gemini", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt }),
+  });
+
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(data?.error || "Gemini failed");
+
+  return data.text as string;
+}
+
