@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { User } from './types';
-import Login from './components/Login';
-import Editor from './components/Editor';
-import Header from './components/Header';
+import { User } from './src/types';
+import Login from './src/components/Login';
+import Editor from './src/components/Editor';
+import Header from './src/components/Header';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
