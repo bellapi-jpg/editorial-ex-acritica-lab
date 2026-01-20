@@ -37,7 +37,7 @@ const Editor: React.FC = () => {
     }
   };
 
-  const toneConfig = {
+  const toneConfig: Record<EditorialTone, { color: string; label: string; shadow: string }> = {
     COLD: { color: 'border-[#00e5ff]', label: 'Frio / Analítico', shadow: 'shadow-[0_20px_40px_rgba(0,229,255,0.1)]' },
     NEUTRAL: { color: 'border-[#00e5ff]', label: 'Equilibrado / SEO', shadow: 'shadow-[0_20px_40px_rgba(0,229,255,0.1)]' },
     HOT: { color: 'border-[#f97316]', label: 'Quente / Viral', shadow: 'shadow-[0_20px_40px_rgba(249,115,22,0.1)]' }
