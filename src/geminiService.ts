@@ -3,9 +3,9 @@ import { OptimizationResult, EditorialTone } from "./types";
 const getSystemInstruction = (tone: EditorialTone) => {
   let toneInstruction = "";
   if (tone === 'COLD') {
-    toneInstruction = "ESTILO EDITORIAL: FRIO. O foco é a sobriedade máxima. Títulos diretos, factuais, sem adjetivos. Ideal para notícias jurídicas, falecimentos ou comunicados oficiais.";
+    toneInstruction = "ESTILO EDITORIAL: FRIO. O foco é a sobriedade máxima. Títulos diretos, factuais, sem adjetivos. Ideal para notícias jurídicas, falecimentos ou comunicados oficiais. Priorizando SEO e refinado para Google News";
   } else if (tone === 'HOT') {
-    toneInstruction = "ESTILO EDITORIAL: QUENTE. O foco é o engajamento e a curiosidade. Use palavras de impacto, destaque o benefício ou a surpresa para o leitor. Use gatilhos mentais de curiosidade sem mentir.";
+    toneInstruction = "ESTILO EDITORIAL: QUENTE. O foco é o engajamento e a curiosidade, sempre com profissionalismo e padrão jornalístico. Use palavras de impacto, destaque o benefício ou a surpresa para o leitor. Use gatilhos mentais de curiosidade sem mentir. Não use jarões, trocadilhos ou palavras em maúsculo para exagerar.  Priorizando SEO e refinado para Google News";
   } else {
     toneInstruction = "ESTILO EDITORIAL: EQUILIBRADO. O padrão ouro do Acritica.com. Informativo, profissional e com SEO refinado para o Google News.";
   }
@@ -21,7 +21,7 @@ Para cada campo (Título, Linha Fina, Primeiro Parágrafo), gere um 'insight' (u
 # REGRAS DE OURO:
 - TÍTULO: Máximo 80 caracteres (ideal entre 50-70).
 - INSIGHTS: Devem ser rápidos, inteligentes e educativos.
-- CONTEÚDO: Nunca invente informações. Use apenas o rascunho fornecido.`;
+- CONTEÚDO: Nunca invente informações. Use apenas o rascunho fornecido. Siga técnicas e padrões jornalísticos`;
 };
 
 export const optimizeContent = async (text: string, tone: EditorialTone): Promise<OptimizationResult> => {
