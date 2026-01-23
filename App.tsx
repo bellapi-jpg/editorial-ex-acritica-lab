@@ -3,9 +3,11 @@ import { User } from './src/types';
 import Login from './src/components/Login';
 import Editor from './src/components/Editor';
 import Header from './src/components/Header';
+import AdminPanel from './src/components/AdminPanel';
 
 const App: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
+  const [showAdmin, setShowAdmin] = useState(false);
 
   useEffect(() => {
     const savedUser = localStorage.getItem('acritica_user');
@@ -14,18 +16,20 @@ const App: React.FC = () => {
     }
   }, []);
 
-  const handleLogin = (email: string) => {
-    const mockUser: User = {
+  const handleLogin = (email: string, name: string, role: string) => {
+    const newUser: User = {
       email,
-      name: email.split('@')[0],
+      name,
+      role,
       photoUrl: `https://picsum.photos/seed/${email}/100`
     };
-    setUser(mockUser);
-    localStorage.setItem('acritica_user', JSON.stringify(mockUser));
+    setUser(newUser);
+    localStorage.setItem('acritica_user', JSON.stringify(newUser));
   };
 
   const handleLogout = () => {
     setUser(null);
+    setShowAdmin(false);
     localStorage.removeItem('acritica_user');
   };
 
@@ -35,9 +39,14 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Header user={user} onLogout={handleLogout} />
+      <Header 
+        user={user} 
+        onLogout={handleLogout} 
+        onAdminClick={() => setShowAdmin(!showAdmin)}
+        showAdminButton={user.role === 'admin'}
+      />
       <main className="flex-grow container mx-auto px-4 py-16 max-w-6xl">
-        <Editor />
+        {showAdmin ? <AdminPanel /> : <Editor />}
       </main>
       <footer className="py-16 border-t border-slate-50">
         <div className="container mx-auto px-4 text-center space-y-2">
