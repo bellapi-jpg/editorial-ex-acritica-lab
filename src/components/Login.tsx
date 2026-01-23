@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
+import { isEmailAuthorized, getAuthorizedUser } from '../supabaseClient';
 
 interface LoginProps {
-  onLogin: (email: string) => void;
+  onLogin: (email: string, name: string, role: string) => void;
 }
 
 const Login: React.FC<LoginProps> = ({ onLogin }) => {
@@ -10,14 +10,34 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.toLowerCase().endsWith('@acritica.com')) {
-      setError('Acesso negado: Domínio inválido');
-      return;
-    }
+    setError('');
     setIsLoading(true);
-    setTimeout(() => onLogin(email), 800);
+
+    try {
+      // Verifica se o email está autorizado no Supabase
+      const isAuthorized = await isEmailAuthorized(email);
+      
+      if (!isAuthorized) {
+        setError('Acesso negado: Email não autorizado');
+        setIsLoading(false);
+        return;
+      }
+
+      // Busca os dados do usuário
+      const user = await getAuthorizedUser(email);
+      
+      if (user) {
+        onLogin(user.email, user.name, user.role);
+      } else {
+        setError('Erro ao carregar dados do usuário');
+        setIsLoading(false);
+      }
+    } catch (err) {
+      setError('Erro de conexão. Tente novamente.');
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -47,7 +67,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="nome@acritica.com"
+                placeholder="seu@email.com"
                 className="w-full h-14 bg-slate-50 border border-slate-200 rounded-[22px] px-6 text-black input-tech-focus transition-all outline-none font-medium text-lg placeholder:text-slate-300"
                 required
               />
@@ -60,7 +80,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                 disabled={isLoading}
                 className="w-full md:w-auto px-10 h-12 bg-black text-white rounded-full font-black text-[10px] tracking-widest uppercase btn-tech-glow transition-all flex items-center justify-center gap-3"
               >
-                {isLoading ? "CONECTANDO..." : "Acessar Lab"}
+                {isLoading ? "VERIFICANDO..." : "Acessar Lab"}
               </button>
             </div>
           </form>
