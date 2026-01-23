@@ -1,8 +1,8 @@
-
 export interface User {
   email: string;
   name: string;
   photoUrl: string;
+  role: string;
 }
 
 export interface InsightData {
