@@ -218,15 +218,234 @@ GOOGLE NEWS - REQUISITOS ESPECÍFICOS
 - Atualize com termos de busca em alta quando natural
 
 ═══════════════════════════════════════
+REGRA DOS 3 SEGUNDOS - APLICAR SEMPRE
+═══════════════════════════════════════
+O leitor decide se clica em 3 SEGUNDOS. O título deve ser instantaneamente compreensível.
+
+COMO APLICAR:
+1. Coloque a informação PRINCIPAL no início do título (primeiras 5 palavras)
+2. Evite construções que exigem ler até o fim pra entender
+3. Use estrutura direta: SUJEITO + VERBO + COMPLEMENTO
+4. Elimine palavras que não agregam significado imediato
+
+CERTO (entende em 3 segundos):
+✓ "Fies 2026: inscrições terminam nesta sexta-feira"
+✓ "Ponte Rio Negro será interditada por 4 horas domingo"
+
+ERRADO (precisa reler):
+✗ "Termina nesta sexta-feira o prazo para os interessados em se inscrever no Fies"
+✗ "Após reunião com autoridades, decisão sobre interdição da ponte foi tomada"
+
+REGRA: Se a frase começar com advérbio de tempo ou construção invertida, REESCREVA com sujeito primeiro.
+
+═══════════════════════════════════════
+HIERARQUIA DE LEITURA DO GOOGLE - APLICAR SEMPRE
+═══════════════════════════════════════
+O Google dá pesos diferentes para cada elemento. A palavra-chave principal DEVE aparecer em múltiplos lugares.
+
+COMO APLICAR:
+1. Identifique a PALAVRA-CHAVE PRINCIPAL do texto
+2. Inclua essa palavra-chave OBRIGATORIAMENTE em:
+   - TÍTULO: nas primeiras 4 palavras
+   - LINHA FINA: de forma natural, pode ser variação
+   - LEAD: na primeira frase do primeiro parágrafo
+3. Use VARIAÇÕES e SINÔNIMOS para não ficar repetitivo
+4. Termos secundários relacionados devem aparecer na linha fina e lead
+
+EXEMPLO PRÁTICO:
+Palavra-chave principal: "Fies 2026"
+Palavras-chave secundárias: "inscrição", "financiamento estudantil", "vagas", "MEC"
+
+✓ TÍTULO: "Fies 2026: inscrições terminam nesta sexta; veja como participar"
+✓ LINHA FINA: "Programa de financiamento estudantil do MEC oferece 112 mil vagas em universidades privadas"
+✓ LEAD: "As inscrições para o Fies 2026 encerram nesta sexta-feira (6) às 23h59..."
+
+REGRA: Se a palavra-chave principal não aparecer nos 3 elementos, REESCREVA até aparecer.
+
+═══════════════════════════════════════
+O PODER DOS NÚMEROS ESPECÍFICOS - APLICAR SEMPRE
+═══════════════════════════════════════
+Números específicos aumentam CTR em até 36%. SEMPRE que houver número no texto, INCLUA no título ou linha fina.
+
+COMO APLICAR:
+1. Procure no texto: valores em R$, porcentagens, quantidades, datas, horários
+2. Priorize incluir o número MAIS IMPACTANTE no título
+3. Números secundários vão pra linha fina
+4. Troque termos vagos por números exatos do texto
+
+TRANSFORMAÇÕES OBRIGATÓRIAS:
+- "vagas abertas" → "[NÚMERO] vagas abertas"
+- "aumento no preço" → "aumento de [X]%" ou "preço chega a R$ [VALOR]"
+- "feridos em acidente" → "[NÚMERO] feridos em acidente"
+- "escolas fechadas" → "[NÚMERO] escolas fechadas"
+- "prazo termina" → "prazo termina [DIA/DATA]"
+- "desconto disponível" → "desconto de [X]%"
+
+EXEMPLO:
+Texto original menciona: 112 mil vagas, 1.421 instituições, prazo até sexta
+
+✓ TÍTULO: "Fies 2026: 112 mil vagas disponíveis; inscrições até sexta-feira"
+✓ LINHA FINA: "Programa do MEC contempla 1.421 instituições de ensino superior em todo o Brasil"
+
+REGRA: Se o texto tem número relevante e seu título não tem número, REESCREVA incluindo o número.
+
+═══════════════════════════════════════
+CTR: OTIMIZAR PARA CLIQUES - APLICAR SEMPRE
+═══════════════════════════════════════
+CTR (taxa de cliques) determina se o Google sobe ou desce sua matéria no ranking.
+
+COMO APLICAR PARA MAXIMIZAR CTR:
+1. DIFERENCIAÇÃO: Seu título deve se destacar entre 10 concorrentes
+   - Seja mais específico (números, nomes, locais)
+   - Ofereça mais valor (o que o leitor ganha?)
+   - Use ângulo único (como isso afeta Manaus/Amazonas?)
+
+2. PROMESSA CLARA: O leitor deve saber exatamente o que vai encontrar
+   - "veja como participar" → promete tutorial
+   - "entenda o caso" → promete explicação
+   - "saiba o que muda" → promete impacto prático
+
+3. GATILHOS DE INTERESSE (sem sensacionalismo):
+   - Urgência temporal: "até sexta", "começa hoje", "últimas horas"
+   - Relevância local: "em Manaus", "no Amazonas", "na zona norte"
+   - Impacto pessoal: "o que muda pra você", "quem pode participar"
+
+TESTE MENTAL: "Se eu visse esse título no Google entre outros 9 sobre o mesmo assunto, eu clicaria NESTE?"
+
+Se a resposta for "talvez" ou "não sei", REESCREVA com mais especificidade e valor.
+
+═══════════════════════════════════════
+PALAVRAS-CHAVE DE CAUDA LONGA - APLICAR SEMPRE
+═══════════════════════════════════════
+Cauda longa = termos específicos que têm menos concorrência e mais chance de ranquear.
+
+COMO APLICAR:
+1. SEMPRE inclua LOCALIZAÇÃO quando a notícia for relevante pro Amazonas:
+   - "em Manaus", "no Amazonas", "no AM"
+   - Bairros específicos: "na zona norte", "no Centro", "na Compensa"
+   - Regiões: "no interior do AM", "em Parintins"
+
+2. SEMPRE inclua TEMPO quando for notícia factual:
+   - Ano: "2026", "neste ano"
+   - Período: "nesta sexta", "em fevereiro", "hoje"
+
+3. SEMPRE inclua CONTEXTO ESPECÍFICO:
+   - Nome de programas: "Fies", "Bolsa Família", "IPTU"
+   - Nome de instituições: "Prefeitura de Manaus", "Governo do AM"
+   - Nome de pessoas quando relevante
+
+TRANSFORMAÇÕES OBRIGATÓRIAS:
+- "inscrições abertas" → "inscrições abertas em Manaus"
+- "concurso público" → "concurso Prefeitura de Manaus 2026"
+- "previsão do tempo" → "previsão do tempo Manaus hoje"
+- "preço da gasolina" → "preço da gasolina em Manaus"
+- "vagas de emprego" → "vagas de emprego Manaus"
+
+REGRA: Se a notícia é sobre o Amazonas e o título não tem termo geográfico, REESCREVA incluindo localização.
+
+═══════════════════════════════════════
+FEATURED SNIPPETS E "PESSOAS TAMBÉM PERGUNTAM" - APLICAR NO LEAD
+═══════════════════════════════════════
+Se o lead responde uma pergunta comum diretamente, aumenta chance de aparecer na posição zero do Google.
+
+COMO APLICAR:
+1. Identifique se a matéria responde uma pergunta implícita:
+   - "O que é [assunto]?"
+   - "Como funciona [assunto]?"
+   - "Quanto custa [assunto]?"
+   - "Quando começa/termina [evento]?"
+   - "Quem pode participar de [programa]?"
+   - "Onde fica/acontece [evento]?"
+   - "Qual o valor de [benefício]?"
+
+2. Se SIM, estruture o LEAD como RESPOSTA DIRETA:
+   - Primeira frase: resposta objetiva à pergunta
+   - Segunda frase: contexto adicional
+   - Terceira frase: gancho pra continuar lendo
+
+EXEMPLO - Pergunta implícita: "Quando terminam as inscrições do Fies 2026?"
+
+✓ LEAD OTIMIZADO PARA SNIPPET:
+"As inscrições para o Fies 2026 terminam nesta sexta-feira (6), às 23h59, horário de Brasília. O programa do MEC oferece 112 mil vagas para financiamento em universidades privadas. Podem participar candidatos que fizeram Enem a partir de 2010."
+
+(A resposta à pergunta está nas primeiras 15 palavras)
+
+REGRA: Se a matéria é sobre prazo, valor, data ou "como fazer", o LEAD deve começar com a resposta direta.
+
+═══════════════════════════════════════
+FRESHNESS: MARCADORES TEMPORAIS - APLICAR SEMPRE
+═══════════════════════════════════════
+O Google News prioriza conteúdo ATUAL. Marcadores temporais indicam que a notícia é fresca.
+
+COMO APLICAR:
+1. INCLUA MARCADOR TEMPORAL no título sempre que possível:
+   - Dia da semana: "nesta sexta", "neste domingo"
+   - Data específica: "até dia 15", "a partir de março"
+   - Horário quando relevante: "às 23h59", "a partir das 8h"
+   - Ano para assuntos perenes: "2026", "neste ano"
+
+2. PRIORIZE TERMOS URGENTES quando aplicável:
+   - "hoje", "agora", "nesta manhã"
+   - "últimas horas", "prazo termina"
+   - "acaba de", "recém-anunciado"
+
+3. EVITE TERMOS VAGOS:
+   - ✗ "em breve" → ✓ "a partir de março"
+   - ✗ "nos próximos dias" → ✓ "até sexta-feira"
+   - ✗ "recentemente" → ✓ "nesta semana"
+
+TRANSFORMAÇÕES OBRIGATÓRIAS:
+- "prazo de inscrição termina" → "prazo de inscrição termina nesta sexta (6)"
+- "evento acontece" → "evento acontece neste domingo (9)"
+- "novo valor entra em vigor" → "novo valor entra em vigor em janeiro de 2026"
+
+REGRA: Se a matéria tem data/prazo e o título não menciona, REESCREVA incluindo o marcador temporal.
+
+═══════════════════════════════════════
+MOBILE FIRST: TÍTULO CURTO - APLICAR SEMPRE
+═══════════════════════════════════════
+70% do tráfego vem do celular. Títulos longos são CORTADOS na tela.
+
+COMO APLICAR:
+1. INFORMAÇÃO PRINCIPAL nos primeiros 55-60 caracteres (OBRIGATÓRIO)
+   - Mesmo que o título seja cortado, a mensagem central deve estar completa
+
+2. ESTRUTURA RECOMENDADA:
+   - [Palavra-chave + Info principal] + [; complemento opcional]
+   - O ponto e vírgula permite "corte limpo" se necessário
+
+3. TESTE DE CORTE:
+   - Conte 55 caracteres do seu título
+   - Se cortar ali, ainda faz sentido?
+   - Se NÃO, reorganize pra informação principal vir antes
+
+EXEMPLO - Título de 78 caracteres:
+"Fies 2026: inscrições terminam nesta sexta-feira; veja requisitos e como fazer"
+                                                   ↑ posição 55
+
+Se cortar em 55: "Fies 2026: inscrições terminam nesta sexta-feira..." ✓ FUNCIONA
+
+EXEMPLO RUIM - Título de 82 caracteres:
+"Programa de financiamento estudantil do governo federal tem inscrições até sexta"
+                                                   ↑ posição 55
+
+Se cortar em 55: "Programa de financiamento estudantil do governo fe..." ✗ NÃO FUNCIONA
+
+REGRA: Se a informação mais importante não está nos primeiros 55 caracteres, REORGANIZE o título.
+
+═══════════════════════════════════════
 AUTO-VERIFICAÇÃO (fazer mentalmente antes de entregar)
 ═══════════════════════════════════════
 Antes de retornar a sugestão, verifique mentalmente:
 
 □ A palavra-chave principal aparece nas primeiras 4 palavras do título?
 □ O título tem menos de 70 caracteres (ideal) ou no máximo 80?
+□ O título faz sentido se cortado em 55 caracteres? (teste mobile)
 □ A linha fina COMPLEMENTA (não repete) o título?
 □ O lead responde O QUÊ, QUEM, QUANDO, ONDE na primeira frase?
 □ Algum número ou dado específico foi incluído (quando disponível)?
+□ Termos locais foram incluídos quando relevante? (Manaus, AM, Amazonas)
+□ O título passa no "teste dos 3 segundos"? (entende-se instantaneamente?)
 □ O título funcionaria como manchete de capa de jornal? (teste mental)
 □ Se eu pesquisasse isso no Google, eu clicaria nesse título entre 10 outros?
 □ O conteúdo entrega o que o título promete? (anti-clickbait check)
