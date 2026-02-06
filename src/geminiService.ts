@@ -12,36 +12,70 @@ const getSystemInstruction = (tone: EditorialTone) => {
 - Foco em credibilidade e autoridade
 - SEO: priorize termos técnicos e oficiais que as pessoas buscam`;
   } else if (tone === 'HOT') {
-    toneInstruction = `ESTILO EDITORIAL: QUENTE/ENGAJAMENTO
-- Foco em curiosidade e engajamento, MAS MANTENDO TOM JORNALÍSTICO SÉRIO
-- Este é um portal de notícias respeitado, NÃO um blog ou página de vendas
-- Destaque urgência e relevância de forma INFORMATIVA, nunca imperativa
-- Gatilhos permitidos: números impactantes, prazos, consequências, "saiba como", "veja", "entenda"
-- Destaque o impacto na vida do leitor de forma sutil e informativa
+    toneInstruction = `ESTILO EDITORIAL: QUENTE/ENGAJAMENTO MÁXIMO
+- OBJETIVO: Criar o título MAIS CLICÁVEL possível, mantendo credibilidade jornalística
+- Seja OUSADO e CRIATIVO nas construções, mas NUNCA sensacionalista
+- Este modo existe para MAXIMIZAR engajamento — use todo o arsenal de técnicas disponíveis
+- Tom: jornalismo assertivo, confiante, que chama atenção
+
+ESTRATÉGIAS OBRIGATÓRIAS NO MODO QUENTE:
+
+1. NÚMEROS EM DESTAQUE (usar SEMPRE que disponível no texto):
+   - Priorize o número mais IMPACTANTE pro título
+   - Números grandes impressionam: "112 mil vagas" > "vagas abertas"
+   - Porcentagens chamam atenção: "alta de 40%", "desconto de 50%"
+   - Valores em reais geram interesse: "R$ 4.863", "R$ 500 milhões"
+   - Quantidades específicas: "3 feridos", "15 escolas", "45 vagas"
+
+2. URGÊNCIA TEMPORAL (intensificar quando houver prazo):
+   - "últimas horas", "termina hoje", "prazo até sexta"
+   - "começa amanhã", "válido só até", "inscrições abertas"
+   - Datas específicas: "até dia 6", "a partir de março"
+
+3. IMPACTO LOCAL (sempre que aplicável):
+   - "em Manaus", "no Amazonas", "na zona norte"
+   - "para amazonenses", "moradores de Manaus"
+
+4. GANCHO DE VALOR (o que o leitor ganha):
+   - "veja como participar", "saiba se você pode", "entenda as regras"
+   - "confira os requisitos", "veja o passo a passo"
+
+5. ÂNGULOS CRIATIVOS (explorar diferentes abordagens):
+   - Foco no benefício: "112 mil vagas para financiar faculdade"
+   - Foco na urgência: "Fies 2026: últimas horas para garantir vaga"
+   - Foco no requisito: "Fies 2026: quem pode se inscrever e como"
+   - Foco no impacto: "Fies 2026 pode financiar 100% da mensalidade"
 
 ESTRUTURAS PERMITIDAS NO MODO QUENTE:
-✓ "[Assunto]: prazo termina hoje; saiba como participar"
-✓ "[Assunto]: últimas horas para [ação]; veja requisitos"
-✓ "[Número] vagas abertas para [programa]; inscrições até [data]"
-✓ "[Assunto] em Manaus: o que muda e como se preparar"
+✓ "[Número impactante] + [assunto]: [gancho de urgência ou valor]"
+✓ "[Assunto]: [número] + [benefício]; [chamada pra ação]"
+✓ "[Assunto] em Manaus: [o que muda] + [como aproveitar]"
+✓ "[Prazo urgente]: [assunto] + [número]; veja como"
+✓ "[Assunto]: quem pode [ação] e como fazer"
 
-PROIBIDO MESMO NO MODO QUENTE:
+EXEMPLOS BEM CALIBRADOS (modo quente):
+✓ "Fies 2026: 112 mil vagas disponíveis e inscrições terminam nesta sexta; veja como participar"
+✓ "112 mil vagas: Fies 2026 tem inscrições até sexta-feira; confira requisitos"
+✓ "Fies 2026 pode financiar 100% da faculdade; inscrições vão até sexta"
+✓ "Últimas horas: Fies 2026 oferece 112 mil vagas para universitários"
+✓ "Fies 2026: prazo termina sexta e programa oferece 112 mil vagas; saiba se você pode participar"
+
+PROIBIDO (linha que não deve cruzar):
 ✗ Verbos no IMPERATIVO DIRETO: "Não perca!", "Corra!", "Aproveite!", "Garanta já!"
-✗ Exclamações de urgência: "Última chance!", "É agora ou nunca!"
-✗ Tom de marketing/vendas: "Essa oportunidade é imperdível!"
-✗ Frases motivacionais: "Realize seu sonho!", "Mude sua vida!"
-✗ Sensacionalismo barato, clickbait enganoso, CAPS LOCK, exageros irreais
-✗ Jargões, trocadilhos forçados, promessas que o texto não cumpre
+✗ Exclamações exageradas: "Última chance!", "É agora ou nunca!", "Imperdível!"
+✗ Tom de marketing/vendas: "Oportunidade única!", "Só hoje!"
+✗ Promessas que o texto não sustenta
+✗ CAPS LOCK em palavras inteiras
+✗ Mais de um ponto de exclamação
 
-EXEMPLO CORRETO (modo quente):
-✓ "Fies 2026: últimas horas para se inscrever e concorrer a 112 mil vagas; saiba como"
-✓ "Fies 2026: prazo de inscrição termina nesta sexta; veja requisitos e como participar"
+CALIBRAÇÃO DO MODO QUENTE:
+- Pode ter UMA exclamação no máximo, e apenas se realmente fizer sentido
+- Pode usar "últimas horas", "termina hoje" — isso é informação, não sensacionalismo
+- Pode destacar números grandes — isso é dado factual
+- Pode usar ponto e vírgula para adicionar gancho: "título principal; veja como"
+- O tom é de URGÊNCIA INFORMATIVA, não de desespero comercial
 
-EXEMPLO ERRADO (modo quente):
-✗ "Fies 2026: últimas horas para se inscrever! Não perca essa chance"
-✗ "Corra! Inscrições do Fies terminam hoje - garanta sua vaga!"
-
-- SEO: use termos de busca populares e palavras que geram cliques orgânicos, mas sempre em tom informativo`;
+MENTALIDADE: Escreva como se fosse a manchete principal do dia que precisa competir por atenção, mas num portal que preza pela credibilidade.`;
   } else {
     toneInstruction = `ESTILO EDITORIAL: EQUILIBRADO/SEO (Padrão Ouro)
 - Equilíbrio perfeito entre informação e otimização de busca
