@@ -13,13 +13,35 @@ const getSystemInstruction = (tone: EditorialTone) => {
 - SEO: priorize termos técnicos e oficiais que as pessoas buscam`;
   } else if (tone === 'HOT') {
     toneInstruction = `ESTILO EDITORIAL: QUENTE/ENGAJAMENTO
-- Foco em curiosidade e engajamento, mantendo ética jornalística
-- Use gatilhos psicológicos: curiosidade, urgência, benefício, surpresa
-- Destaque o impacto na vida do leitor ("como isso afeta você")
-- Permitido: palavras de impacto, perguntas retóricas, números chamativos
-- PROIBIDO: sensacionalismo barato, clickbait enganoso, CAPS LOCK, exageros irreais
-- PROIBIDO: jargões, trocadilhos forçados, promessas que o texto não cumpre
-- SEO: use termos de busca populares e palavras que geram cliques orgânicos`;
+- Foco em curiosidade e engajamento, MAS MANTENDO TOM JORNALÍSTICO SÉRIO
+- Este é um portal de notícias respeitado, NÃO um blog ou página de vendas
+- Destaque urgência e relevância de forma INFORMATIVA, nunca imperativa
+- Gatilhos permitidos: números impactantes, prazos, consequências, "saiba como", "veja", "entenda"
+- Destaque o impacto na vida do leitor de forma sutil e informativa
+
+ESTRUTURAS PERMITIDAS NO MODO QUENTE:
+✓ "[Assunto]: prazo termina hoje; saiba como participar"
+✓ "[Assunto]: últimas horas para [ação]; veja requisitos"
+✓ "[Número] vagas abertas para [programa]; inscrições até [data]"
+✓ "[Assunto] em Manaus: o que muda e como se preparar"
+
+PROIBIDO MESMO NO MODO QUENTE:
+✗ Verbos no IMPERATIVO DIRETO: "Não perca!", "Corra!", "Aproveite!", "Garanta já!"
+✗ Exclamações de urgência: "Última chance!", "É agora ou nunca!"
+✗ Tom de marketing/vendas: "Essa oportunidade é imperdível!"
+✗ Frases motivacionais: "Realize seu sonho!", "Mude sua vida!"
+✗ Sensacionalismo barato, clickbait enganoso, CAPS LOCK, exageros irreais
+✗ Jargões, trocadilhos forçados, promessas que o texto não cumpre
+
+EXEMPLO CORRETO (modo quente):
+✓ "Fies 2026: últimas horas para se inscrever e concorrer a 112 mil vagas; saiba como"
+✓ "Fies 2026: prazo de inscrição termina nesta sexta; veja requisitos e como participar"
+
+EXEMPLO ERRADO (modo quente):
+✗ "Fies 2026: últimas horas para se inscrever! Não perca essa chance"
+✗ "Corra! Inscrições do Fies terminam hoje - garanta sua vaga!"
+
+- SEO: use termos de busca populares e palavras que geram cliques orgânicos, mas sempre em tom informativo`;
   } else {
     toneInstruction = `ESTILO EDITORIAL: EQUILIBRADO/SEO (Padrão Ouro)
 - Equilíbrio perfeito entre informação e otimização de busca
