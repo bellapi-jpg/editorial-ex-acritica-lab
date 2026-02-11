@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { isEmailAuthorized, getAuthorizedUser } from '../supabaseClient';
+import { getAuthorizedUser } from '../supabaseClient';
 
 interface LoginProps {
   onLogin: (email: string, name: string, role: string) => void;
@@ -16,22 +16,12 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     setIsLoading(true);
 
     try {
-      // Verifica se o email está autorizado no Supabase
-      const isAuthorized = await isEmailAuthorized(email);
-      
-      if (!isAuthorized) {
-        setError('Acesso negado: Email não autorizado');
-        setIsLoading(false);
-        return;
-      }
-
-      // Busca os dados do usuário
       const user = await getAuthorizedUser(email);
-      
+
       if (user) {
         onLogin(user.email, user.name, user.role);
       } else {
-        setError('Erro ao carregar dados do usuário');
+        setError('Acesso negado: Email não autorizado');
         setIsLoading(false);
       }
     } catch (err) {
@@ -46,7 +36,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
         <div className="text-center space-y-4">
           <div className="flex justify-center items-baseline gap-1">
             <h1 className="text-4xl md:text-6xl font-[1000] tracking-tighter text-black">acritica</h1>
-            <h1 className="text-4xl md:text-6xl font-[200] tracking-tighter text-[#00e5ff]">lab</h1>
+            <span className="text-4xl md:text-6xl font-[200] tracking-tighter text-[#00e5ff]">lab</span>
           </div>
           <div className="inline-block px-4 py-1.5 bg-black rounded-xl">
              <span className="mono text-[10px] md:text-[11px] font-black text-[#00e5ff] tracking-widest uppercase italic">editorial_xp</span>

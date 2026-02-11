@@ -10,7 +10,25 @@ interface ResultCardProps {
 
 const ResultCard: React.FC<ResultCardProps> = ({ label, title, content, insight, highlight, cleanStyle, charLimit, onRegenerate, toneColor }) => {
   const [copied, setCopied] = useState(false);
-  const handleCopy = () => { navigator.clipboard.writeText(content); setCopied(true); setTimeout(() => setCopied(false), 2000); };
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(content);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Fallback para navegadores sem suporte à Clipboard API
+      const textarea = document.createElement('textarea');
+      textarea.value = content;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
 
   const isHot = toneColor?.includes('orange');
 

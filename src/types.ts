@@ -11,6 +11,8 @@ export interface InsightData {
 }
 
 export interface OptimizationResult {
+  palavraChavePrincipal: string;
+  palavrasChaveSecundarias: string[];
   titulo: string;
   tituloInsight: InsightData;
   linhaFina: string;

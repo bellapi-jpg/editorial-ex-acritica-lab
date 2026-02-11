@@ -15,8 +15,8 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout, onAdminClick, showAdmin
         <div className="flex items-center gap-3">
           <div className="flex flex-col">
             <div className="flex items-baseline gap-1">
-              <h1 className="text-2xl font-[1000] tracking-tighter text-black leading-none">acritica</h1>
-              <h1 className="text-2xl font-[300] tracking-tighter text-[#00e5ff] leading-none">lab</h1>
+              <span className="text-2xl font-[1000] tracking-tighter text-black leading-none">acritica</span>
+              <span className="text-2xl font-[300] tracking-tighter text-[#00e5ff] leading-none">lab</span>
             </div>
             <span className="mono text-[10px] font-black text-[#00e5ff] tracking-[0.2em] uppercase mt-1">
               editorial_xp
