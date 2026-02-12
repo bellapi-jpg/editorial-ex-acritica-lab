@@ -46,19 +46,19 @@ const AdminPanel: React.FC = () => {
       setNewName('');
       setNewRole('user');
       loadUsers();
-    } catch (err: any) {
-      setError(err.message || 'Erro ao adicionar');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Erro ao adicionar');
     }
   };
 
   const handleRemoveUser = async (id: number, email: string) => {
     if (!confirm(`Remover ${email}?`)) return;
-    
+
     try {
       await removeUser(id);
       loadUsers();
-    } catch (err: any) {
-      setError(err.message || 'Erro ao remover');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Erro ao remover');
     }
   };
 

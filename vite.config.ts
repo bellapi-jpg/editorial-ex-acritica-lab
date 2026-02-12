@@ -3,9 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  define: {
-    "process.env": {}, // evita crash e não vaza env vars
-  },
+  envPrefix: "VITE_",
   server: {
     port: 3000,
   },

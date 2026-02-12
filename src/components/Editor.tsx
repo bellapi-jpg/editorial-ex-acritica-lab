@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { optimizeContent } from '../geminiService';
 import { OptimizationResult, AppStatus, EditorialTone } from '../types';
 import ResultCard from './ResultCard';
+import TagsCard from './TagsCard';
 
 const Editor: React.FC = () => {
   const [text, setText] = useState('');
@@ -10,6 +11,7 @@ const Editor: React.FC = () => {
   const [status, setStatus] = useState<AppStatus>(AppStatus.IDLE);
   const [results, setResults] = useState<OptimizationResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   const handleOptimize = async () => {
     if (!text.trim() || text.length < 20) {
@@ -23,10 +25,9 @@ const Editor: React.FC = () => {
       setResults(result);
       setStatus(AppStatus.SUCCESS);
       setTimeout(() => {
-        const target = document.getElementById('results-view');
-        if (target) {
+        if (resultsRef.current) {
           window.scrollTo({
-            top: target.offsetTop - 120,
+            top: resultsRef.current.offsetTop - 120,
             behavior: 'smooth'
           });
         }
@@ -115,7 +116,7 @@ const Editor: React.FC = () => {
 
       {/* 3. RESULTADOS */}
       {status === AppStatus.SUCCESS && results && (
-        <div id="results-view" className="space-y-8 md:space-y-12 pt-10 md:pt-16 pb-24 animate-fade-up scroll-mt-32">
+        <div ref={resultsRef} className="space-y-8 md:space-y-12 pt-10 md:pt-16 pb-24 animate-fade-up scroll-mt-32">
           <div className="flex items-center gap-4 px-2">
             <div className="h-[3px] w-8 md:w-12 bg-[#00e5ff] rounded-full"></div>
             <h2 className="text-black font-[1000] text-2xl md:text-4xl tracking-tighter uppercase">Relatório Lab</h2>
@@ -125,6 +126,7 @@ const Editor: React.FC = () => {
             <ResultCard label="HEADLINE // Título" title="Sugestão Principal" content={results.titulo} insight={results.tituloInsight} highlight={true} charLimit={80} onRegenerate={handleOptimize} toneColor={toneConfig[tone].color.replace('border-', 'text-')} />
             <ResultCard label="SUB // Linha Fina" title="Contextualização SEO" content={results.linhaFina} insight={results.linhaFinaInsight} />
             <ResultCard label="LEAD // Primeiro Parágrafo" title="Reestruturação de Lide" content={results.primeiroParagrafo} insight={results.primeiroParagrafoInsight} cleanStyle={true} />
+            <TagsCard tags={results.tags} insight={results.tagsInsight} toneColor={toneConfig[tone].color.replace('border-', 'text-')} />
           </div>
         </div>
       )}
