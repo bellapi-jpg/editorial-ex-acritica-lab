@@ -3,6 +3,7 @@ import React, { useState, useRef } from 'react';
 import { optimizeContent } from '../geminiService';
 import { OptimizationResult, AppStatus, EditorialTone } from '../types';
 import ResultCard from './ResultCard';
+import TagsCard from './TagsCard';
 
 const Editor: React.FC = () => {
   const [text, setText] = useState('');
@@ -125,6 +126,7 @@ const Editor: React.FC = () => {
             <ResultCard label="HEADLINE // Título" title="Sugestão Principal" content={results.titulo} insight={results.tituloInsight} highlight={true} charLimit={80} onRegenerate={handleOptimize} toneColor={toneConfig[tone].color.replace('border-', 'text-')} />
             <ResultCard label="SUB // Linha Fina" title="Contextualização SEO" content={results.linhaFina} insight={results.linhaFinaInsight} />
             <ResultCard label="LEAD // Primeiro Parágrafo" title="Reestruturação de Lide" content={results.primeiroParagrafo} insight={results.primeiroParagrafoInsight} cleanStyle={true} />
+            <TagsCard tags={results.tags} insight={results.tagsInsight} toneColor={toneConfig[tone].color.replace('border-', 'text-')} />
           </div>
         </div>
       )}

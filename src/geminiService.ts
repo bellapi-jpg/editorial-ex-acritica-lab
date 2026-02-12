@@ -483,6 +483,59 @@ Antes de retornar a sugestão, verifique mentalmente:
 □ O título funcionaria como manchete de capa de jornal? (teste mental)
 □ Se eu pesquisasse isso no Google, eu clicaria nesse título entre 10 outros?
 □ O conteúdo entrega o que o título promete? (anti-clickbait check)
+□ As tags cobrem palavra-chave principal, entidades, localização e tema macro?
+□ As tags são entre 5 e 10, específicas e sem duplicatas?
+
+═══════════════════════════════════════
+TAGS - POTENCIALIZAÇÃO VIA MARCADORES
+═══════════════════════════════════════
+Sugira de 5 a 10 tags estratégicas para a matéria. As tags são marcadores internos do CMS que agrupam conteúdos relacionados e potencializam a distribuição.
+
+CRITÉRIOS PARA SELEÇÃO DE TAGS:
+
+1. SEO E BUSCA ORGÂNICA:
+   - Inclua a palavra-chave principal como tag
+   - Inclua variações e termos relacionados que as pessoas buscam
+   - Use termos de cauda longa relevantes (ex: "concurso Manaus 2026" em vez de só "concurso")
+   - Priorize termos com volume real de busca
+
+2. GOOGLE DISCOVER E NEWS:
+   - Tags com nomes próprios (pessoas, instituições, programas) performam bem
+   - Tópicos em alta (trending) aumentam chance de aparecer no Discover
+   - Termos geográficos (Manaus, Amazonas) ajudam no ranqueamento local
+
+3. GOOGLE SEARCH (ENTIDADES E TÓPICOS):
+   - O Google organiza informações por ENTIDADES (pessoas, lugares, organizações, eventos)
+   - Cada tag deve representar uma entidade ou tópico reconhecível pelo Google
+   - Tags genéricas demais ("notícia", "informação") NÃO ajudam
+   - Tags específicas ("Fies 2026", "MEC", "financiamento estudantil") SIM ajudam
+
+4. RECIRCULAÇÃO INTERNA:
+   - Tags agrupam matérias no portal — pense em quais assuntos o leitor buscaria mais
+   - Uma boa tag conecta esta matéria com outras do mesmo universo temático
+   - Ex: matéria sobre Fies → tags que conectam com outras matérias de educação, vestibular, MEC
+
+5. HIERARQUIA DE RELEVÂNCIA:
+   - As primeiras 3 tags devem ser as mais relevantes e específicas
+   - Tags seguintes podem cobrir temas secundários, localização e contexto
+   - A última tag pode ser um tema macro (editoria ampla)
+
+FORMATO DAS TAGS:
+- Letras minúsculas, sem acentos nas tags
+- Palavras separadas por espaço dentro da tag
+- Cada tag é uma string individual no array
+- Sem hashtag (#), sem vírgula dentro da tag
+
+EXEMPLO PRÁTICO:
+Matéria sobre inscrições do Fies 2026 em Manaus:
+Tags: ["fies 2026", "financiamento estudantil", "mec", "inscricao fies", "universidade manaus", "educacao superior", "bolsa de estudo", "vestibular 2026"]
+
+PROIBIDO NAS TAGS:
+✗ Tags genéricas: "notícia", "atualização", "importante", "destaque"
+✗ Tags duplicadas ou muito parecidas entre si
+✗ Tags que não aparecem no contexto da matéria
+✗ Mais de 10 tags (dilui relevância)
+✗ Menos de 5 tags (cobertura insuficiente)
 
 ═══════════════════════════════════════
 INSIGHT (Pílula de Conhecimento com foco em SEO)
@@ -545,8 +598,20 @@ export const optimizeContent = async (text: string, tone: EditorialTone): Promis
           },
           required: ["text", "category"],
         },
+        tags: {
+          type: "ARRAY",
+          items: { type: "STRING" },
+        },
+        tagsInsight: {
+          type: "OBJECT",
+          properties: {
+            text: { type: "STRING" },
+            category: { type: "STRING", enum: ["SEO", "ALGORITHM", "PSYCHOLOGY", "STRUCTURE"] },
+          },
+          required: ["text", "category"],
+        },
       },
-      required: ["palavraChavePrincipal", "palavrasChaveSecundarias", "titulo", "tituloInsight", "linhaFina", "linhaFinaInsight", "primeiroParagrafo", "primeiroParagrafoInsight"],
+      required: ["palavraChavePrincipal", "palavrasChaveSecundarias", "titulo", "tituloInsight", "linhaFina", "linhaFinaInsight", "primeiroParagrafo", "primeiroParagrafoInsight", "tags", "tagsInsight"],
     },
   };
 

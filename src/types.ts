@@ -19,6 +19,8 @@ export interface OptimizationResult {
   linhaFinaInsight: InsightData;
   primeiroParagrafo: string;
   primeiroParagrafoInsight: InsightData;
+  tags: string[];
+  tagsInsight: InsightData;
 }
 
 export enum AppStatus {
