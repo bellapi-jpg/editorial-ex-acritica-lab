@@ -102,6 +102,10 @@ ALTER TABLE logs ENABLE ROW LEVEL SECURITY;
 
 -- Permitir leitura pública de posts e logs (para o dashboard)
 -- Ajuste conforme sua política de acesso
+DROP POLICY IF EXISTS "Allow read posts" ON posts;
+DROP POLICY IF EXISTS "Allow read logs" ON logs;
+DROP POLICY IF EXISTS "Allow read config" ON config;
+
 CREATE POLICY "Allow read posts" ON posts FOR SELECT USING (true);
 CREATE POLICY "Allow read logs" ON logs FOR SELECT USING (true);
 CREATE POLICY "Allow read config" ON config FOR SELECT USING (true);
